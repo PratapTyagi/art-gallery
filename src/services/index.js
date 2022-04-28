@@ -1,8 +1,13 @@
 import axios from "axios";
-const URL = "https://api.giphy.com/v1/stickers/search";
+const URL = "https://api.giphy.com/v1/gifs";
 
-export const retrieveImages = async () => {
+export const retrieveImages = async (query) => {
+  if (query) {
+    return await axios.get(
+      `${URL}/search?api_key=${process.env.REACT_APP_API_KEY}&q=${query}`
+    );
+  }
   return await axios.get(
-    `${URL}?api_key=${process.env.REACT_APP_API_KEY}&q=cheeseburgers`
+    `${URL}/trending?api_key=${process.env.REACT_APP_API_KEY}`
   );
 };

@@ -2,11 +2,12 @@ import "./Search.css";
 import React, { useState } from "react";
 import { BiSearchAlt2 } from "react-icons/bi";
 
-const Search = () => {
+const Search = ({ handleSearch }) => {
   const [query, setQuery] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
+    handleSearch(query);
   };
 
   return (

@@ -4,6 +4,7 @@ import { retrieveImages } from "../../services";
 import { Gallery, Search } from "../../components";
 
 const Home = () => {
+  // For card display + pagination
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -16,7 +17,12 @@ const Home = () => {
     setIsLoading(false);
   }, []);
 
-  // on page logic
+  // Searching logic
+  const handleSearch = (string) => {
+    retrieveImages(string).then(({ data: { data } }) => setImages(data));
+  };
+
+  // Current page items logic
   const lastImageIndex = imagePerPage * currentPage;
   const firstImageIndex = lastImageIndex - imagePerPage;
   const pageItems = images.slice(firstImageIndex, lastImageIndex);
@@ -27,7 +33,7 @@ const Home = () => {
   return (
     <div className="home">
       <div className="inner">
-        <Search />
+        <Search handleSearch={handleSearch} />
         {!isLoading ? (
           <Gallery
             images={pageItems}
