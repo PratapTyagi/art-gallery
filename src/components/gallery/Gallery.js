@@ -1,9 +1,9 @@
 import React from "react";
 import Card from "../card/Card";
+import Pagination from "../pagination/Pagination";
 import "./Gallery.css";
 
-const Gallery = ({ images }) => {
-  console.log(images);
+const Gallery = ({ images, paginate, totalItems, imagePerPage }) => {
   return (
     <div className="gallery">
       <div className="container">
@@ -11,6 +11,11 @@ const Gallery = ({ images }) => {
           return <Card key={img.id} image={img} />;
         })}
       </div>
+      <Pagination
+        totalItems={totalItems}
+        paginate={paginate}
+        imagePerPage={imagePerPage}
+      />
     </div>
   );
 };
