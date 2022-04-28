@@ -1,0 +1,10 @@
+.gallery {
+  height: 100%;
+  margin: 2% 0;
+}
+
+.gallery > .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

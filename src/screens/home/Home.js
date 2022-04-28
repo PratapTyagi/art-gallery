@@ -13,7 +13,7 @@ const Home = () => {
     <div className="home">
       <div className="inner">
         <Search />
-        <Gallery />
+        <Gallery images={images} />
         <Pagination />
       </div>
     </div>
