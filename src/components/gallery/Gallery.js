@@ -3,6 +3,7 @@ import Card from "../card/Card";
 import Pagination from "../pagination/Pagination";
 import "./Gallery.css";
 
+// Body part down to search bar
 const Gallery = ({ images, paginate, totalItems, imagePerPage }) => {
   return (
     <div className="gallery">
