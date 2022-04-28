@@ -1,0 +1,42 @@
+.search_form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.search_form > .search_input {
+  position: relative;
+  width: 100%;
+}
+
+.search_form > .search_input > .icon {
+  position: absolute;
+  left: 1%;
+  bottom: 40%;
+  font-weight: 600;
+}
+
+.search_form > .search_input > input {
+  width: 95%;
+  padding: 20px;
+  padding-left: 30px;
+  font-size: 18px;
+  font-weight: 550;
+  border: none;
+  border-radius: 15px;
+  background-color: whitesmoke;
+  color: black;
+  outline: none;
+}
+
+.search_form > button {
+  width: 15%;
+  padding: 15px;
+  margin-left: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+}
